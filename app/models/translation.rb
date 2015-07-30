@@ -5,11 +5,11 @@ class Translation < ActiveRecord::Base
   after_destroy :delete_from_yaml
 
   def export_to_yaml
-    if self.locale == 'en' && value_changed?
+    if self.locale == 'es' && value_changed?
       d = YAML::load_file(ENV['YAML_OUISHARE_FILE_PATH']) #Load
       
-      if d['en']['dynamic_translations'].blank?
-        d['en']['dynamic_translations'] = {}
+      if d['es']['dynamic_translations'].blank?
+        d['es']['dynamic_translations'] = {}
       end
       splitted_key = key.split('.')
       final_hash = []
@@ -27,20 +27,20 @@ class Translation < ActiveRecord::Base
       end
       final_hash = new_hash
       
-      d['en']['dynamic_translations'][splitted_key[0]] = (Hash[d['en']['dynamic_translations'][splitted_key[0]].to_a + final_hash[splitted_key[0]].to_a])
+      d['es']['dynamic_translations'][splitted_key[0]] = (Hash[d['es']['dynamic_translations'][splitted_key[0]].to_a + final_hash[splitted_key[0]].to_a])
       
       hash = {}
       values_buffer = final_hash
       final_hash.keys.each do |global_key|
-        if d["en"]["dynamic_translations"].has_key?(global_key)
-          d["en"]["dynamic_translations"][global_key].each do |key,value|
+        if d["es"]["dynamic_translations"].has_key?(global_key)
+          d["es"]["dynamic_translations"][global_key].each do |key,value|
             hash = hash.merge(key => value)         
           end          
           final_hash[global_key] = hash.merge(final_hash[global_key])        
 
         end
       end
-      d["en"]["dynamic_translations"] = d["en"]["dynamic_translations"].merge(final_hash)
+      d["es"]["dynamic_translations"] = d["es"]["dynamic_translations"].merge(final_hash)
       
       File.open(ENV['YAML_OUISHARE_FILE_PATH'], 'w') do |f|
         f.write d.to_yaml
@@ -52,9 +52,9 @@ class Translation < ActiveRecord::Base
 
   def delete_from_yaml
     d = YAML::load_file(ENV['YAML_OUISHARE_FILE_PATH'])
-    if !d['en']['dynamic_translations'].blank?
-      if !d['en']['dynamic_translations'][self.key].blank?
-          d['en']['dynamic_translations'].delete self.key
+    if !d['es']['dynamic_translations'].blank?
+      if !d['es']['dynamic_translations'][self.key].blank?
+          d['es']['dynamic_translations'].delete self.key
       end 
     end
     splitted_key = key.split('.')
@@ -76,9 +76,9 @@ class Translation < ActiveRecord::Base
 
           
       
-      d['en']['dynamic_translations'][splitted_key[0]] = (Hash[d['en']['dynamic_translations'][splitted_key[0]].to_a - final_hash[splitted_key[0]].to_a])
-      if d['en']['dynamic_translations'][splitted_key[0]].blank?
-        d['en']['dynamic_translations'].delete splitted_key[0]
+      d['es']['dynamic_translations'][splitted_key[0]] = (Hash[d['es']['dynamic_translations'][splitted_key[0]].to_a - final_hash[splitted_key[0]].to_a])
+      if d['es']['dynamic_translations'][splitted_key[0]].blank?
+        d['es']['dynamic_translations'].delete splitted_key[0]
       end
       
     
@@ -133,8 +133,8 @@ class Translation < ActiveRecord::Base
   #       if buffer_hash.blank? 
   #         buffer_hash = initial_hash 
   #         final_hash = {}
-  #         final_hash['en'] = {}
-  #         final_hash['en']['dynamic_translations'] = {}
+  #         final_hash['es'] = {}
+  #         final_hash['es']['dynamic_translations'] = {}
           
   #       else
   #         buffer_hash = buffer_hash
@@ -144,7 +144,7 @@ class Translation < ActiveRecord::Base
   #         if buffer_hash[splitted_key[occurences]].instance_of?(Hash)
 
               
-  #           final_hash =final_hash['en']['dynamic_translations']
+  #           final_hash =final_hash['es']['dynamic_translations']
                           
             
             
