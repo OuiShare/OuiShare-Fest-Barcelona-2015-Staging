@@ -11,7 +11,7 @@ class TraductionsController < ApplicationController
 
   def new
     # @availables_languages = I18n.available_locales.sort    
-    @availables_languages = I18n.available_locales.select {|locale| locale.to_s == 'en'}
+    @availables_languages = I18n.available_locales.select {|locale| locale.to_s == 'es'}
   end
 
   def create    
@@ -33,7 +33,7 @@ class TraductionsController < ApplicationController
         end
       end    
       if save_successfull
-        redirect_to traductions_path, :notice => "Trads Succesfully added"
+        redirect_to traductions_path, :notice => "Translation succesfully added"
       else
         redirect_to traductions_path, :notice => "An error occured"
       end
@@ -45,7 +45,7 @@ class TraductionsController < ApplicationController
   def edit
     @translation = Translation.find(params[:id])
     # @availables_languages = I18n.available_locales.sort
-    @availables_languages = I18n.available_locales.select {|locale| locale.to_s == 'en'}
+    @availables_languages = I18n.available_locales.select {|locale| locale.to_s == 'es'}
   end
 
   def update
@@ -79,7 +79,7 @@ class TraductionsController < ApplicationController
       end
     end
     if save_successfull
-      redirect_to traductions_path, :notice => "Trads Succesfully updated"
+      redirect_to traductions_path, :notice => "Translation succesfully updated"
     else
       redirect_to traductions_path, :notice => "An error occured"
     end
@@ -98,7 +98,7 @@ class TraductionsController < ApplicationController
     end
 
     if save_successfull
-      redirect_to traductions_path, :notice => "Trads Succesfully destroyed"
+      redirect_to traductions_path, :notice => "Translation succesfully destroyed"
     else
       redirect_to traductions_path, :notice => "An error occured"
     end
