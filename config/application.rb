@@ -34,7 +34,7 @@ module OuiShareFest
     config.i18n.default_locale = :es
     config.i18n.available_locales = [:es, :ca, :en]
     config.i18n.fallbacks = true
-    config.i18n.fallbacks = [:es]
+    config.i18n.fallbacks = [:es, :ca, :en]
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
