@@ -1,5 +1,6 @@
 .blank_bg#_speakers{:style => "padding-bottom: 10px;"}
   .container
+    / SPEAKERS
     .row.centered
       %h3.ouishare_stencil
         = t('dynamic_translations.speakers.title')
@@ -12,31 +13,9 @@
                 = render "/individuals/partials/speaker_display", :speaker => speaker
                 
 
-      / -if !@displayed_speakers.blank?
-      /   .ch-grid
-      /     - @displayed_speakers.each do |speaker|
-      /       .col-lg-3.individuals-list-display
-      /         %li
-      /           = render "/individuals/partials/speaker_display", :speaker => speaker
-      /     - if !@hidden_speakers.blank?
-      /       %div
-      /         #allspeakers{style: "display: none;"}  
-      /           - @hidden_speakers.each do |speaker|
-      /             .col-lg-3.individuals-list-display
-      /               %li
-      /                 = render "/individuals/partials/speaker_display", :speaker => speaker              
-      /         %div.row.mb_20
-      /           %a#btn_showspeakers_down
-      /             %button.btn.btn-embossed.btn-primary.mt_20
-      /               = t('dynamic_translations.speakers.show_all')
-                    
-      /         %div.row.mb_20.mt_20
-      /           %button.btn.btn-embossed.btn-primary.hide#btn_showspeakers_up
-      /             = t('dynamic_translations.speakers.hide_all')
-
-
 
 .blank_bg#_team{:style => "padding-top: 50px;"}
+  / TEAM
   .container
     .row.centered
       %h3.ouishare_stencil
@@ -64,7 +43,9 @@
           /         %button.btn.btn-embossed.btn-primary
           /           = t('dynamic_translations.team.hide_all')
 
+
 .partners-container#_partners{:style => 'padding-top:130px'}
+  / PARTNERS
   .container.sinfo
     - if !@partners.blank?
       .row.centered
@@ -110,24 +91,23 @@
       = render "/individuals/partials/partners_display", :partners => @supporters, :important_partners_display => false
 
 .become_partner
+  / BECOME PARTNER
   .container 
     .row.centered
       .col-md-5.col-md-offset-4
         .btn.btn-pink.become-partner-btn
           %a{:href => 'mailto:partners@ouishare.net'}
-            Become a partner
+            = t('dynamic_translations.partners.become_partner')
 
-    / %h6{:style => "margin-bottom:0px; padding-bottom:15px;"}
-    /   = t('dynamic_translations.partners.become_a_partner')
-    /   %br
-    /   %a{:href => "mailto:partners@ouishare.net"} partners@ouishare.net
+
 
 .background_3#_whoscoming 
+  / WHOS COMING
   .container.tickets-section 
     .row.centered{:style => 'padding-top:0%;'}
       - if @ouishare_fest_attendees && !@ouishare_fest_attendees["attendees"].blank?
         %h3.ouishare_stencil.white
-          = t('dynamic_translations.tickets.who_s_coming') 
+          = t('dynamic_translations.tickets.whos_coming') 
         %hr.white
         %br
         %ul.unstyled.attendees-list

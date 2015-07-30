@@ -1,4 +1,4 @@
-%section#slideshow-container#_about
+%section#slideshow-container
   .banner
     %ul
 
@@ -28,49 +28,54 @@
         %img{alt: "", src: "assets/slider/new_img4.jpg", style: "background:#e4e6e6"}/
         .caption.general_caption.pst_media14.lfl.ltl{"data-easing" => "easeOutBack", "data-end" => "5700", "data-endeasing" => "easeInBack", "data-endspeed" => "900", "data-speed" => "900", "data-start" => "100", "data-x" => "56", "data-y" => "250"}
 
-
+      / slide 5
       %li{"data-transition" => "fade"}
         %img{alt: "", src: "assets/slider/new_img5.jpg", style: "background:#1abc9c"}/
         .caption.general_caption.pst_media12.lft{"data-easing" => "easeOutExpo", "data-end" => "7900", "data-endeasing" => "easeInBack", "data-endspeed" => "900", "data-speed" => "600", "data-start" => "800", "data-x" => "58", "data-y" => "250"}
 
+      / slide 6
       %li{"data-transition" => "fade"}
         %img{alt: "", src: "assets/slider/new_dance.jpg", style: "background:#1abc9c"}/
         .caption.general_caption.pst_media12.lft{"data-easing" => "easeOutExpo", "data-end" => "7900", "data-endeasing" => "easeInBack", "data-endspeed" => "900", "data-speed" => "600", "data-start" => "800", "data-x" => "58", "data-y" => "250"}
           %h1{:style => "text-shadow: 2px 0px black"}
             And Dance
 
+/ DESCRIPTION BLOCK
 
 .first-part
   .container
     .main-section
       .row
         %h3.col-md-6.col-md-offset-3.ouishare_stencil.white.text-center#_about{:style => "font-size:20px;"}
-          = t('dynamic_translations.about.subtitle')
-        .col-md-6.col-md-offset-3{:style => "text-align:left;"}
-          / %p.white{:style => 'margin-top: 45px;'}
-          /   = t('dynamic_translations.about.description')
-          / %br
-
-          / %p.white
-          /   = t('dynamic_translations.what_is_community.text1')
-          / %br
-          / %p.white
-          /   = t('dynamic_translations.what_is_community.text2')
-          / %br
-          / %p.white{:style =>"font-weight:bold;"}
-          /   = t('dynamic_translations.what_is_community.text3')
-          / %br
-          / %p.white
-          /   = t('dynamic_translations.what_is_community.text4')
-          / %br
-          / %p.white
-          /   = t('dynamic_translations.what_is_community.text5')
+          = t('dynamic_translations.about.text0')
+      .row
+        .col-md-6.col-md-offset-3
+          %br
+          %br
+          %p.white
+            = t('dynamic_translations.about.text1')
+          %br
+          %p.white
+            = t('dynamic_translations.about.text2')
+          %br
+          %p.white
+            = t('dynamic_translations.about.text3')
+          %br
+          %p.white
+            = t('dynamic_translations.about.text4')
+          %br
+          %p.white
+            = t('dynamic_translations.about.text5')
+          %br
+          %p.white
+            = t('dynamic_translations.about.text6')
           %br
           %br
           %br
           %p.topics.row.centered
             = image_tag "/assets/coeur-key-topic.png"
-    .third-section
+    .third-section#_key_topics
+      / Key topics
       .row.centered
         %h3.ouishare_stencil.white
           = t('dynamic_translations.topics.title')
@@ -134,50 +139,42 @@
 
 
 
-/ Zero Waste banner
 
-.become_partner#_zerowaste
-  .container
-    .row.centered
-      .col-md-5.col-md-offset-4
-        .btn.btn-pink.become-partner-btn
-          %a{href: home_zero_waste_event_path}
-            = t('dynamic_translations.zerowaste.btn_text')
+/ HIGHLIGHTS
 
-
-/ Highlights from 2015
-.blank_bg#_highlights
-  .container
-    .row.centered
-      .col-md-6.col-md-offset-3{style:"position: relative"}
-        /* I know it's weird, just a hack that allow to scale an iframe before bootstrap 3.2 */
-        %img{style:"display:block;width:100%;height:auto", src:"http://placehold.it/16x9"}
-        %iframe{allowfullscreen: "", frameborder: "0", src: "//www.youtube.com/embed/Tq1oeagn2rA", style:"position:absolute;top:0;left:0;width:100%;height:100%"}
+/ .blank_bg#_highlights
+/   .container
+/     .row.centered
+/       .col-md-6.col-md-offset-3{style:"position: relative"}
+/         /* I know it's weird, just a hack that allow to scale an iframe before bootstrap 3.2 */
+/         %img{style:"display:block;width:100%;height:auto", src:"http://placehold.it/16x9"}
+/         %iframe{allowfullscreen: "", frameborder: "0", src: "//www.youtube.com/embed/Tq1oeagn2rA", style:"position:absolute;top:0;left:0;width:100%;height:100%"}
 
 
-    .row.centered
-      %h3.ouishare_stencil
-        = t('dynamic_translations.highlight.watch_2015_sessions')
-      %hr.pink
+/     .row.centered
+/       %h3.ouishare_stencil
+/         = t('dynamic_translations.highlights.title')
+/       %hr.pink
 
-    .row.centered
-      .col-md-8.col-md-offset-2
-        .row
-          %p
-            = t('dynamic_translations.highlight.description_2014')
-        .row{:style => "margin-top:50px;"}
-          .col-md-12
-            .col-md-6.col-md-offset-3
-              %a.btn.btn-large.btn-primary{href: "https://www.youtube.com/playlist?list=PL8Bt3EbdmpKM4tYKyERKbp6VMYTjYZwCF", :target => "_blank", :style => "width: 170px;"}
-                = t('dynamic_translations.highlight.watch_the_sessions')
+/     .row.centered
+/       .col-md-8.col-md-offset-2
+/         .row
+/           %p
+/             = t('dynamic_translations.highlights.description')
+/         .row{:style => "margin-top:50px;"}
+/           .col-md-12
+/             .col-md-6.col-md-offset-3
+/               %a.btn.btn-large.btn-primary{href: "https://www.youtube.com/playlist?list=PL8Bt3EbdmpKM4tYKyERKbp6VMYTjYZwCF", :target => "_blank", :style => "width: 170px;"}
+/                 = t('dynamic_translations.highlight.btn')
 
 
-/ OSFest14 report
+/ OSFEST REPORT
+
 / #_report.aboutouishare-section{:style => "padding-top: 100px;"}
 /   .container
 /     .row.centered
 /       %h3.ouishare_stencil
-/         = t('dynamic_translations.report.2014_title')
+/         = t('dynamic_translations.report.title')
 /       %hr.blue
 /       %br
 /       %br
@@ -185,7 +182,7 @@
 /         .row
 /           .col-md-8.col-md-offset-2
 /             %p
-/               = t('dynamic_translations.report.2014_description')
+/               = t('dynamic_translations.report.description')
 
 /       .row
 /         .col-md-12.col-lg-8.col-lg-offset-2
@@ -203,34 +200,8 @@
 /                   %a{:href => 'http://2014.ouisharefest.com', :target => '_blank'}
 /                     = t('dynamic_translations.report.old_site')
 
-/ #location.triangle_bg#_about_location
-/   .container
-/     .row.centered
-/       %h3.ouishare_stencil
-/         = t('dynamic_translations.location.title')
-/         / A Magical Location
-/         %br
-/         %br
-/       .container.round_fond
-/         %h4{:style => "font-size:18px;"}
-/           = t('dynamic_translations.location.description')
-/           / We look forward to welcoming you at the Cabaret Sauvage in northeastern Paris: a magical venue with a circus-like hall, located by the canal in the Parc de la Villette.
-/       %br
-/       %br
-/       .col-md-6
 
-/         %object{height: "375", width: "100%"}
-/           %param{name: "flashvars", value: "offsite=true&lang=fr-fr&page_show_url=%2Fphotos%2Fouishare%2Fsets%2F72157641311640224%2Fshow%2F&page_show_back_url=%2Fphotos%2Fouishare%2Fsets%2F72157641311640224%2F&set_id=72157641311640224&jump_to="}/
-/           %param{name: "movie", value: "http://www.flickr.com/apps/slideshow/show.swf?v=140556"}/
-/           %param{name: "allowFullScreen", value: "true"}/
-/           %embed{allowfullscreen: "true", flashvars: "offsite=true&lang=fr-fr&page_show_url=%2Fphotos%2Fouishare%2Fsets%2F72157641311640224%2Fshow%2F&page_show_back_url=%2Fphotos%2Fouishare%2Fsets%2F72157641311640224%2F&set_id=72157641311640224&jump_to=", height: "375", src: "http://www.flickr.com/apps/slideshow/show.swf?v=140556", type: "application/x-shockwave-flash", width: "100%"}
-/       .col-md-6
-/         #gmap_canvas{style: "height:375px;width:100%;margin-bottom:20px;"}
-/     .row.centered
-/       %br
-/       %br
-/       %br
-/       %br
+/ PRESS
 
 .background_2#_about_press
   .container
@@ -248,37 +219,37 @@
           .press-content
             .press-text
               %h3.naiv
-                “For anyone under the impression that the rise of the sharing economy is simply a blip reaction to the recession, the OuiShare conference is proving otherwise”
+                = t('dynamic_translations.press.quote1')
           .label-press
-            The Guardian
+            = t('dynamic_translations.press.quote1_source')
         .item
           .press-content
             .press-text
               %h3.naiv
-                This year’s theme, the Age of Communities, was broad enough to welcome all sides of the movement: venture capitalists alongside black markets, slow foodies alongside Bitcoin promoters.
+                = t('dynamic_translations.press.quote2')
           .label-press
-            Al Jazeera
+            = t('dynamic_translations.press.quote2_source')
         .item
           .press-content
             .press-text
               %h3.naiv
-                “Parmi les trois points sensibles évoqués à l'occasion du OuiShareFest: le rapport aux institutions, la possibilité de participer à la réduction des inégalités, et la durabilité du modèle collaboratif”
+                = t('dynamic_translations.press.quote3')
           .label-press
-            Le Monde
+            = t('dynamic_translations.press.quote3_source')
         .item
           .press-content
             .press-text
               %h3.naiv
-                \...este festival sin orden pero con sentido..
+                = t('dynamic_translations.press.quote4')
           .label-press
-            El Pais
+            = t('dynamic_translations.press.quote4_source')
         .item
           .press-content
             .press-text
               %h3.naiv
-                The atmosphere was positive and driven. This was an assembly of doers, creators, and thinkers.
+                = t('dynamic_translations.press.quote5')
           .label-press
-            Shareable
+            = t('dynamic_translations.press.quote5_source')
 
       %img.quote-left-carousel{:src => '/assets/quote_left.png', :alt => 'quote left'}
       %img.quote-right-carousel{:src => '/assets/quote_left.png', :alt => 'quote right'}
@@ -296,7 +267,7 @@
   .container
     .row.centered
       %h3.ouishare_stencil
-        = t('dynamic_translations.about.ouishare_title')
+        = t('dynamic_translations.about_ouishare.title')
       %hr.blue
       %br
       %br
@@ -304,7 +275,7 @@
         .row
           .col-md-8.col-md-offset-2
             %p
-              = t('dynamic_translations.about.ouishare_text')
+              = t('dynamic_translations.about_ouishare.text')
 
         .row
           .col-md-8.col-md-offset-2
@@ -313,5 +284,5 @@
             .col-md-12
               .btn.btn-pink{:style => 'margin: 40px 0px 0px 0px;'}
                 %a{:href => 'http://ouishare.net/en/users/sign_up', :target => '_blank'}
-                  = t('dynamic_translations.about.ouishare_btn')
+                  = t('dynamic_translations.about_ouishare.btn')
 
