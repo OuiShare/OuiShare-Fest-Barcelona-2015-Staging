@@ -6,7 +6,7 @@
         %span.icon-bar
         %span.icon-bar
       %a.navbar-brand.nopadding{href: root_path}
-        = image_tag "/assets/osf16-header-white.svg", :class => "header-logo"
+        = image_tag "/assets/osf15bcn-header-white.svg", :class => "header-logo"
 
     .navbar-collapse.collapse
       %ul.nav.navbar-nav
@@ -65,7 +65,7 @@
                 = t('dynamic_translations.partners.title')
             %li
               %a{href: "participants#_whoscoming"}
-                = t('dynamic_translations.tickets.whos_coming')
+                = t('dynamic_translations.attendees.title')
 
         %li.dropdown
           %a.dropdown-toggle{href: "/program"}
@@ -91,12 +91,12 @@
             %li
               %a{href: "join#_getinvolved"}
                 = t('dynamic_translations.get_involved.title')
-            %li
-              %a{href: "join#_awards"}
-                = t('dynamic_translations.ouishare_awards.title')
-            %li
-              %a{href: "join#_prepare"}
-                = t('dynamic_translations.prepare_trip.title')
+            / %li
+            /   %a{href: "join#_awards"}
+            /     = t('dynamic_translations.ouishare_awards.title')
+            / %li
+            /   %a{href: "join#_prepare"}
+            /     = t('dynamic_translations.prepare_trip.title')
         %li.tickets-highlight.dropdown
           %a.dropdown-toggle.highlight{href: "/join#_tickets"}
             =t('dynamic_translations.tickets.title')
