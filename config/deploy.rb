@@ -1,11 +1,11 @@
-set :application, "OuiShare-Fest"
-set :repository,  "ouishare@ouishare.webfactional.com:webapps/git/repos/OuiShare-Fest.git"
+set :application, "OuiShare-Fest-Barcelona-2015-Staging"
+set :repository,  "ouishare@ouishare.webfactional.com:webapps/git/repos/OuiShare-Fest-Barcelona-2015-Staging.git"
 
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 set :scm, :git
 
-set :deploy_to, "~/webapps/ouishare_fest"
+set :deploy_to, "~/webapps/osfest_bcn_2015_staging"
 
 set :default_env, {
   'PATH' => "#{deploy_to}/bin:$PATH",
